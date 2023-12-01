@@ -28,6 +28,11 @@ def print_digit_sum(num):
 
 def merge_list(lst1, lst2):
     lst1.extend(lst2)
+    for i in range(len(lst1)):
+        for j in range(i):
+            if(lst1[i]<lst1[j]):
+                lst1[i], lst1[j] = lst1[j], lst1[i]
+        
     return lst1
 
 
@@ -43,30 +48,29 @@ def solve(a, b, c):
     return x1, x2
 
 
-print("завдання №")
-i = int(input(""))
-if i == 1:
-    draw_triangle()
-elif i == 2:
-    draw_rectangle()
-elif i == 3:
-    fill = input("fill = ")
-    base = int(input("base = "))
-    draw_triangle1(fill, base)
-elif i == 4:
-    print_digit_sum(int(input("num = ")))
-elif i == 5:
-    lst1 = list(map(int, input("lst1 = ").split()))
-    lst2 = list(map(int, input("lst2 = ").split()))
-    print(merge_list(lst1, lst2))
-elif i == 6:
-    x1 = int(input("x1 = "))
-    y1 = int(input("y1 = "))
-    x2 = int(input("x2 = "))
-    y2 = int(input("y2 = "))
-    print(get_middle_point(x1, y1, x2, y2))
-elif i == 7:
-    a = int(input("a = "))
-    b = int(input("b = "))
-    c = int(input("c = "))
-    print(solve(a, b, c))
+# print("завдання №")
+
+draw_triangle()
+
+draw_rectangle()
+
+fill = input("fill = ")
+base = int(input("base = "))
+draw_triangle1(fill, base)
+
+print_digit_sum(int(input("num = ")))
+
+lst1 = list(map(int, input("lst1 = ").split()))
+lst2 = list(map(int, input("lst2 = ").split()))
+print(merge_list(lst1, lst2))
+
+x1 = int(input("x1 = "))
+y1 = int(input("y1 = "))
+x2 = int(input("x2 = "))
+y2 = int(input("y2 = "))
+print(get_middle_point(x1, y1, x2, y2))
+
+a = int(input("a = "))
+b = int(input("b = "))
+c = int(input("c = "))
+print(solve(a, b, c))
