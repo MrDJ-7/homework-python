@@ -57,8 +57,7 @@ else:
         print(True)
 # 7
 a = input('a = ')
-s = a.split(' ')
 s1 = 0
-for i in s:
+for i in a:
     s1 += int(i)
-print(*s, sep='+', end='='+str(s1))
+print(*a, sep='+', end='='+str(s1))
